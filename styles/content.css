@@ -248,7 +248,7 @@ body {
 .main_game .pole {
     position: absolute;
     height: 240px;
-    width: 10%;
+    width: 200px;
     background-color: red;
     right: 0px;
     font-size: 40px;
@@ -258,7 +258,7 @@ body {
 .main_game .pole2 {
     position: absolute;
     height: 280px;
-    width: 10%;
+    width: 200px;
     background-color: red;
     right: -100vw;
     font-size: 40px;
