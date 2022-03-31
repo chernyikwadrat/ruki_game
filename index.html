@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>рука об руку</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+	 <link href="styles/reset.css" rel="stylesheet">
+   <link href="styles/content.css" rel="stylesheet">
+  <link href="styles/font.css" rel="stylesheet">  
+  <link href="styles/adaptiv.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="images/favicon.png"> </head>
+
+<body>  
+  <div class="hello" id="hello1"> 
+	 <div class="container">
+	   <div class="content">
+
+      <div class="putin_vor"> putin vor! </div>
+
+      <h1>добро пожаловать в&nbsp;игру!</h1>
+      <div class="hline-1"></div>
+
+      <p> Пройди свой путь борьбы, не обманувшись защитными механизмами твоей психики.  </p>
+      <div class="hline-1"></div>
+<div class="settings">
+      <div class="choose" id="choose_1">
+        <p>Выбери пожалуйста испытание:</p>
+        <div class="c-1">
+          <img src="images/prev-btn.svg" id="prev-btn-1">
+          <h1 id="blockhello"> паника </h1>
+          <img src="images/next-btn.svg" id="next-btn-1">
+        </div>
+      </div>  
+      <div class="hline-1"></div>
+
+       <div class="choose" id="choose_2">
+        <p>Выбери пожалуйста персонажа:</p>
+        <div class="c-1">
+          <img src="images/prev-btn.svg" id="prev-btn-2"></img>
+              <div id="char"></div>
+          <img src="images/next-btn.svg" id="next-btn-2"></img>
+        </div>
+      </div>  
+    </div>
+      <div class="line-1"></div>
+    </div>
+  </div>
+    <div class="hands">
+      <img src="images/hand-1.png">
+      <img src="images/hand-1.png">
+      <img src="images/hand-1.png">
+      <img src="images/hand-1.png">
+    </div>  
+    <div class="button" id="game-btn"><p>играть</p></div>
+  </div>
+
+
+  <div class="main_game"> 
+
+    <div class="top_line">
+      <div class="content">
+        <p id="anxious">пройди через все тревоги</p>
+        <div class="score">
+          <p>ресурсы:&nbsp;</p>
+          <p id="score">100</p>
+        </div>
+      </div>
+    </div>
+    <div class="hline-2"></div>
+
+    <div id="game_container">
+      <div class="wrapper">
+      <div id="bird"></div>
+      <div id="pole-1" class="pole"><p class="blockgame">паника</p></div>
+      <div id="pole-2" class="pole"><p class="blockgame">паника</p></div>
+      <div id="pole-3" class="pole2"><p class="blockgame">паника</p></div>
+      <div id="pole-4" class="pole2"><p class="blockgame">паника</p></div>
+      <div class="bg">
+       <img  src="images/bg-1.png">
+       <img  src="images/bg-1.png">
+      </div> 
+    </div>
+    </div>
+
+    <div class="hline-2"></div>
+    <div class="bottom_line">
+      <div class="content b">
+       <img class="back" src="images/back.png" id="back-btn">
+        <div class="level">
+          <p id="level">1</p>
+        </div>
+      </div>      
+    </div>
+
+    <div id="lvl_2">
+      <img src="images/hand-3.png" id="lvl2-h1">
+      <img src="images/hand-3.png" id="lvl2-h2">
+    </div>
+
+    <div id="lvl_3">
+<div class="hline line" id="line_1"></div>
+    <div class="vline line" id="line_2"></div>
+    <div class="hline line" id="line_3"></div>
+    <div class="vline line" id="line_4"></div>
+
+      <div class="pair">
+      <div id="point_1">
+        <p>1</p>
+        <div class="point" id="p1"></div>
+      </div>  
+      <div id="point_2">
+        <p>2</p>
+        <div class="point" id="p2"></div>        
+      </div> 
+    </div>
+    <div class="pair">
+      <div id="point_3">        
+        <div class="point" id="p3"></div>
+        <p>4</p>
+      </div> 
+      <div id="point_4">        
+        <div class="point" id="p4"></div>
+        <p>3</p>        
+      </div> 
+    </div>
+  
+    
+
+   </div>
+
+   <div id="lvl_4">
+      <img src="images/hand-4.png" id="lvl4-h">
+      <div id="circle"></div>
+    </div>
+
+    <div id="lvl_5">
+      <div class="objects">
+        <img src="images/sublime_1_1.png" id="s_1"  >
+        <img src="images/sublime_2_1.png" id="s_2"  >
+        <img src="images/sublime_3_1.png" id="s_3"  >
+      </div>
+   </div>
+
+   
+
+    <div id="info">
+      <div id="what"> <p>что такое <span id="what_word"> отрицание </span> ? </p></div>
+      <div id="text">
+        <h2 id="what_text"> отрицание</h2>
+        <p id="text_text"> Отрицание — чрезвычайно простая для понимания защита. Её название говорит само за себя — применяющий её человек, собственно, отрицает события или информацию, которую не может принять. Проблема с отрицанием состоит в том, что оно  не может защитить от реальности.</p>
+        <img src="images/close.svg" id="close">
+      </div>
+   </div>
+
+  </div>
+<div id="lvl_6"></div>
+
+  <div class="level_end">
+    <div class="content">
+      <div class="result"><h1>остаток ресурсов:&nbsp;<span id="result">100</span></h1></div>
+      <div class="vline-2"></div>
+      <div class="text">
+        <p>ты молодец, но твоя психика борется &nbsp;с изменениями </p>
+        <p>чтобы перейти дальше пройди&nbsp;через защитный механизм <span id="level_name">отрицания</span> </p>
+       </div>
+
+    </div>
+    <div class="hline-3"></div> 
+    <div class="hands">
+      <img src="images/hand-2.png">
+      <img src="images/hand-2.png">
+    </div>  
+    <div class="button" id="lvl-btn"><p>давай <br>дальше</p></div>
+
+  </div>  
+
+<div class="finish"> 
+   <div class="container">
+
+      <p>поздравляю! <br> ты прошел игру!</p>
+      <p> <span class="blockgame">паника</span> проработана. твой результат не важен. важно то, что твоя психика не обманулась <br> ни одним защитным механизмом  в твоей личной борьбе. </p>
+  </div>
+
+    <div class="hands">
+      <img src="images/hand-1.png">
+      <img src="images/hand-1.png">
+    </div>
+
+    <div class="button" id="fin-btn"><p>играть <br>снова</p></div>
+
+</div>
+
+ 
+
+ </body>
+ <script type="text/javascript">
+var blocks = ["паника","тревога","грусть","злость","вина","обида","агрессия"];
+var i=0;
+var blockhello = $('#blockhello');
+var blockgame = document.getElementsByClassName("blockgame");
+
+ $(document).ready(function(){
+  $("#next-btn-1").click(function(){
+  {
+    i = i + 1;
+    if (i >= blocks.length) i = 0;
+    blockhello.html(blocks[i]);
+   $( '.blockgame' ).each(function() {
+    $( this ).html(blocks[i]);
+    });
+ }  });
+  });
+
+
+$(document).ready(function(){
+  $("#prev-btn-1").click(function(){
+  {
+    i = i - 1;
+    if (i < 0) i = blocks.length-1;
+     blockhello.html(blocks[i]);
+     $( '.blockgame' ).each(function() {
+    $( this ).html(blocks[i]);
+    });
+ }  });
+  });
+
+ var faces = ["url('images/face-1.png')","url('images/face-2.png')","url('images/face-3.png')","url('images/face-4.png')","url('images/face-5.png')","url('images/face-6.png')","url('images/face-7.png')","url('images/face-8.png')","url('images/face-9.png')","url('images/face-10.png')","url('images/face-11.png')","url('images/face-12.png')",];
+var k=0;
+var face = document.getElementById("char");
+var facegame = document.getElementById("bird");
+var putin_vor=false;
+  button(); 
+ $(document).ready(function(){
+  $("#next-btn-2").click(function(){
+  {
+    putin_vor=false;
+    button();
+    k = k + 1;
+    putin();
+    $("#game-btn").css("pointer-events","auto");
+    if (k >= faces.length) k = 0;
+   face.style.backgroundImage = faces[k];
+   facegame.style.backgroundImage = faces[k];
+   
+   
+ }  });
+  });
+$(document).ready(function(){
+  $("#prev-btn-2").click(function(){
+  {
+    putin_vor=false;
+    button();
+    k = k - 1;
+    putin();
+    $("#game-btn").css("pointer-events","auto");
+    if (k < 0) k = faces.length-1;
+   face.style.backgroundImage = faces[k];
+   facegame.style.backgroundImage = faces[k];
+  
+   
+ }  });
+  });
+
+function putin(){
+  if (k==5||k==6||k==7) {putin_vor=true;} else putin_vor=false;
+  return putin_vor;
+ }
+
+function button(){
+  $("#game-btn").click(function(){
+  { 
+    if (putin_vor==true) 
+      {
+        $(".putin_vor").fadeIn(500); 
+        $("#game-btn").css("pointer-events","none");
+setTimeout(function () {
+$(".putin_vor").fadeOut();
+  
+}, 4000);
+      }
+    else if(putin_vor==false)
+    {
+    $("#game-btn").css("pointer-events","auto");
+    $(".hello").css("display","none");
+    $(".main_game").css("display","block");
+  }
+ }  });
+  }
+$(document).ready(function(){
+  $("#back-btn").click(function(){
+  {
+    $(".hello").css("display","flex");
+    $(".main_game").css("display","none");
+    location.reload();
+ }  });
+  });
+$(document).ready(function(){
+  $("#fin-btn").click(function(){
+  
+    location.reload();
+   });
+  });
+
+
+
+
+   var score = $('#score');
+   var result = 100;
+   var level = $('#level');
+   var lvl=1;
+
+$("#game-btn").click(function() {
+
+    var container = $('.wrapper');
+    var bird = $('#bird');
+    var pole = $('.pole');
+    var pole2 = $('.pole2');
+    var pole_1 = $('#pole-1');
+    var pole_2 = $('#pole-2');
+    var pole_3 = $('#pole-3');
+    var pole_4 = $('#pole-4');
+ 
+    var bg = $('.bg');
+
+    
+
+    var container_width = parseInt(container.width());
+    var container_height = parseInt(container.height());
+    var pole_initial_position = parseInt(pole.css('right'));
+    var pole_initial_height = parseInt(pole.css('height'));
+    var pole2_initial_position = parseInt(pole2.css('right'));
+    var bg_initial_position = parseInt(bg.css('margin-left'));
+    var pole2_initial_height = parseInt(pole2.css('height'));
+    var bird_left = parseInt(bird.css('left'));
+    var bird_height = parseInt(bird.height());
+  
+
+    var go_up = false;
+    var game_over = false;
+    var score_updated = false;
+    var speed = 20;
+   
+   $(document).ready(function(){
+    if(putin_vor==false){
+    game();
+    sound_bg();
+}
+  });
+
+    function game(){
+    var the_game = setInterval(function () {
+
+
+        if ( parseInt(bird.css('top')) <= 0 || parseInt(bird.css('top')) > container_height - bird_height || collision_top(bird,pole_1) || collision_bottom(bird,pole_2) || collision_top(bird,pole_3) || collision_bottom(bird,pole_4)) {
+
+            clearInterval(the_game);
+            game_over = true;
+            sound_bg_stop();
+            sound_error();
+
+            setTimeout(function(){
+              $(".main_game").css("display","none");
+              $(".level_end").css("display","block");
+              }, 1000);
+            
+
+
+        } else {
+
+         
+
+            var pole_current_position = parseInt(pole.css('right'));
+            var pole2_current_position = parseInt(pole2.css('right'));
+            var bg_current_position = parseInt(bg.css('margin-left'));
+
+            console.log(pole_current_position);
+            console.log(container_width - bird_left);
+
+            if (pole_current_position === container_width - bird_left || pole2_current_position === container_width - bird_left){
+              
+
+              result= result-1;
+              score.text(result);
+              $("#result").text(result);
+
+            
+            }
+
+
+            if (pole2_current_position - parseInt(pole_1.css('width'))> container_width) {
+                var new_height = parseInt(Math.random() * 200);
+
+
+                pole_1.css('height', pole_initial_height + new_height );
+                pole_2.css('height', pole_initial_height - new_height );
+               
+                
+
+                pole_3.css('height', pole2_initial_height - new_height );
+                pole_4.css('height', pole2_initial_height + new_height );
+                
+
+        
+
+                pole_current_position = pole_initial_position;
+                pole2_current_position = pole2_initial_position;
+            }
+
+         
+  
+            pole.css('right', pole_current_position + speed);    
+            pole2.css('right', pole2_current_position + speed);
+
+
+           // console.log(bg.css('margin-left'));
+           bg.css('margin-left', bg_current_position - speed );
+             if((0-bg_current_position)>0.5*parseInt(bg.css('width')))
+            {
+              bg.css('margin-left','-120px');
+            }
+
+            if (go_up === false) {
+                go_down();
+            }
+        }
+    }, 40);
+
+  }
+var audio = new Audio(); 
+  function sound_bg() {  
+  audio.src = 'audio/bg_sound.m4a'; 
+  audio.autoplay = true; 
+  audio.loop = true; 
+  audio.muted = false;
+}
+
+  function sound_bg_stop() {
+    audio.muted = true;
+}
+  function sound_up() {
+  var audio = new Audio(); 
+  audio.src = 'audio/up.m4a'; 
+  audio.autoplay = true; 
+}
+
+  function sound_error() {
+  var audio = new Audio(); 
+  audio.src = 'audio/error.m4a'; 
+  audio.autoplay = true; 
+}
+
+
+    $(document).on('keydown', function (e) {
+        var key = e.keyCode;
+        if (key === 32 && go_up === false && game_over === false) {
+            go_up = setInterval(up, 50);
+        }
+    });
+
+    $(document).on('keyup', function (e) {
+        var key = e.keyCode;
+        if (key === 32) {
+            clearInterval(go_up);
+            go_up = false;
+        }
+    });
+
+
+    function go_down() {
+        bird.css('top', parseInt(bird.css('top')) + 5);
+    }
+
+    function up() {
+        bird.css('top', parseInt(bird.css('top')) - 10);
+        sound_up();
+    }
+
+    
+
+
+    function collision_top($div1, $div2) {
+        var bird_top = $div1.position().top;
+        var pole_top = $div2.position().top + $div2.outerHeight(true);
+        var bird_side_1 = $div1.position().left + $div1.outerWidth(true);
+        var pole_side_1 = $div2.position().left;
+        var bird_side_2 = $div1.position().left;
+        var pole_side_2 = $div2.position().left + $div2.width();
+
+        if (bird_side_1 >= pole_side_1 && bird_side_2 < pole_side_2 && bird_top <= pole_top) return true;
+        else return false;
+    }
+
+    function collision_bottom($div1, $div2) {
+        var bird_bottom = $div1.position().top + $div1.height();
+        var pole_bottom = $div2.position().top;
+        var bird_side_1 = $div1.position().left + $div1.outerWidth(true);
+        var pole_side_1 = $div2.position().left;
+        var bird_side_2 = $div1.position().left;
+        var pole_side_2 = $div2.position().left + $div2.width();
+
+        if (bird_side_1 >= pole_side_1 && bird_side_2 < pole_side_2 && bird_bottom >= pole_bottom) return true;
+        else return false;
+    }
+
+
+    $("#lvl-btn").click(function(){
+      bird.css('top', '200px');
+      pole.css('right', '0px');
+      pole2.css('right', '-100vw');
+
+
+      level.text(parseInt(level.text())+1);
+      
+      
+      $(".main_game").css("display","block");
+      $(".level_end").css("display","none");
+
+
+      
+      console.log(parseInt(level.text));
+      var level_name = $('#level_name');
+
+$(document).ready(function(){
+  if (parseInt(level.text()) == 2){
+    level_name.text("рационализации");
+    lvl_2();
+  }
+  if (parseInt(level.text()) == 3){
+    level_name.text("вытесенения");
+    lvl_3();
+    $( "#what_word" ).text("рационализация"); 
+    $( "#what_text" ).text("рационализация");    
+    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+  }
+  if (parseInt(level.text()) == 4){
+    level_name.text("сублимации");
+    lvl_4();
+    $( "#what_word" ).text("вытеснение"); 
+    $( "#what_text" ).text("вытеснение");    
+    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+  }
+  if (parseInt(level.text()) == 5){
+    level_name.text("проекции");
+    lvl_5();
+    $( "#what_word" ).text("сублимация"); 
+    $( "#what_text" ).text("сублимация");    
+    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+  }
+  if (parseInt(level.text()) == 6){
+    lvl_6();
+    $(".game_container").css("display","none");
+    $( "#what_word" ).text("проекция"); 
+    $( "#what_text" ).text("проекция");    
+    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+  }
+
+  });
+
+});
+
+
+
+function lvl_2(){
+  $("#lvl_2").css("display","flex");
+  info();
+  var lvl2_check1;
+  var lvl2_check2;
+  console.log(lvl2_check1);
+ console.log(lvl2_check2);
+
+  $('#lvl2-h1').draggable({
+  stop: function(){ 
+    var hand1 = $("#lvl2-h1");
+    var top = hand1.position().top;
+    var bottom = hand1.position().bottom;
+    var left = hand1.position().left;
+    var width = 0.95*parseInt(hand1.css('height'));
+    var height = 0.7*parseInt(hand1.css('width'));
+    console.log(left);
+    console.log(width);
+     $(document).ready(function(){
+        if((0 - left) >= width || (0 - top) >= height ){
+      hand1.css('left','-3000px');
+      hand1.css('transition','2s');
+      sound_up();
+      lvl2_check1 = true;
+      check();
+     }    
+     else {lvl2_check1 = false;} console.log(lvl2_check1);
+     return lvl2_check1;
+  });
+
+     var check2 = lvl2_check2;
+     console.log(check2);
+  }
+
+  });
+
+ $('#lvl2-h2').draggable({
+  stop: function(){ 
+    var hand2 = $("#lvl2-h2");
+    var top = hand2.position().top;
+    var bottom = hand2.position().bottom;
+    var left = hand2.position().left;
+    var width = parseInt($(".main_game").css("width"));
+    var height = 0.7*parseInt(hand2.css('width'));
+    $(document).ready(function(){
+    if( left >= (width-0.2*width) || (0 - top) >= height ){
+      hand2.css('left','2000px');
+      hand2.css('transition','2s');
+      sound_up();
+      lvl2_check2 = true;
+      check();
+     }   
+    else {lvl2_check2 = false;}
+    console.log(lvl2_check2);
+    return lvl2_check2;
+  });
+   
+  }    
+ }); 
+ function check () {
+ var check1 = lvl2_check1;
+ var check2 = lvl2_check2;
+  if(check1==true && check2==true){
+    game();
+    sound_bg();
+    game_over= false;
+    $("#info").css("display","none");
+    $(".timer").css("display","none");
+    $("#lvl_2").css("display","none");
+  }
+}
+
+
+}
+    
+function lvl_3(){
+  $("#lvl_3").css("display","block");
+  info();
+
+  $("#line_1").css("left", $("#p1").position().left + 16 + "px"); 
+  $("#line_1").css("top", $("#p1").position().top + 16 + "px");
+  $("#line_2").css("left", $("#p2").position().left + 20 + "px");
+  $("#line_2").css("top", $("#p1").position().top + 16 + "px");
+  $("#line_3").css("left", $("#p4").position().left + 16 + "px"); 
+  $("#line_3").css("top", $("#p3").position().top + 16 + "px");
+  $("#line_4").css("left", $("#p1").position().left + 20 + "px");
+  $("#line_4").css("top", $("#p3").position().top + 16 + "px");
+
+  var check1 = false;
+  var check2 = false;
+  var check3 = false;
+    $("#point_2").click(function(){
+    $("#line_1").animate({width: $("#p2").position().left - $("#p1").position().left}, 1000);
+    sound_up();
+    check1=true;
+    return check1;
+  });
+    console.log(check1);
+   
+    $("#point_4").click(function(){
+    if(check1==true){
+    $("#line_2").animate({height: $("#p4").position().top - $("#p2").position().top}, 1000);
+    sound_up();
+    check2=true;
+  }
+    return check2;
+  });
+  
+    $("#point_3").click(function(){
+      if(check2==true){
+    $("#line_3").animate({width: $("#p2").position().left - $("#p1").position().left, left: $("#p3").position().left + 16 + "px" }, 1000);
+    sound_up();
+    check3=true;
+  }
+  return check3;
+  });
+  
+    $("#point_1").click(function(){
+      if(check3==true){
+    $("#line_4").animate({height: $("#p4").position().top - $("#p2").position().top, top: $("#p1").position().top + 16 + "px"}, 1000);
+    sound_up();
+    setTimeout(function () {
+    $("#lvl_3").css("display","none");
+    game();
+    sound_bg();
+    game_over= false;
+    $("#info").css("display","none");
+  
+}, 2000);
+  }
+  });
+}
+
+function lvl_4(){
+  $("#lvl_4").css("display","flex");
+  info();
+  $('#lvl4-h').draggable({
+      axis: 'x'
+    }); 
+    $('#lvl4-h').on('dragstart', function() {
+        $('#circle').each(function() {
+            $(this).trigger('dragstart');
+        });
+    });
+$('#lvl4-h').on('drag', function() {
+        var mainleft = $(this).css('left');
+        
+        $('#circle').each(function() {
+            $(this).trigger('drag');
+            $(this).addClass('ui-draggable-dragging');
+            $(this).css('margin-left', parseInt(mainleft) + 0.5*parseInt($('#lvl_4').css("width")) +'px');
+        });
+        console.log(mainleft);
+        if (parseInt(mainleft) >= 0)
+        {   
+            sound_up();
+            $('#lvl4-h').css('draggable','false');
+            $('#lvl4-h').css('transition','2s');
+            $('#circle').css('transition','2s');
+            $('#lvl4-h').css('left','-100%');
+            $('#circle').css("margin-left", 2*parseInt($('#lvl_4').css("width")) +'px');
+          
+        }
+        
+    });
+
+$('#lvl4-h').on('dragstop', function() {
+        var mainleft = $(this).css('left');
+       
+        $('#circle').each(function() {
+            $(this).trigger('dragstop');
+            $(this).removeClass('ui-draggable-dragging');
+            $(this).css('margin-left', parseInt(mainleft) + 0.5*parseInt($('#lvl_4').css("width")) + 'px');
+        });     
+        if (parseInt(mainleft) >= 0)
+        {
+            sound_up();
+            $('#lvl4-h').css('draggable','false');
+            $('#lvl4-h').css('transition','2s');
+            $('#circle').css('transition','2s');
+            $('#lvl4-h').css('left','-100%');
+            $('#circle').css("margin-left", 2*parseInt($('#lvl_4').css("width")) +'px');
+            setTimeout(function () {
+    $("#lvl_4").css("display","none");
+    game();
+    sound_bg();
+    game_over= false;
+    $("#info").css("display","none");
+  
+}, 2000);
+          
+        }
+    });
+}
+    
+function lvl_5(){
+  $("#lvl_5").css("display","block");
+  info();
+
+  var lvl5_check1=false;
+  var lvl5_check2=false;
+  var lvl5_check3=false;
+
+  $("#s_1").click(function(){
+    sound_up();    
+    if (lvl5_check1==false){
+    $("#s_1").attr("src", "images/sublime_1_2.png");
+    lvl5_check1=true;
+    check();
+  }
+  else {
+    $("#s_1").attr("src", "images/sublime_1_1.png");
+    lvl5_check1=false;
+  }
+  return lvl5_check1;
+
+  });
+
+    $("#s_2").click(function(){ 
+    sound_up();   
+    if (lvl5_check2==false){
+    $("#s_2").attr("src", "images/sublime_2_2.png");
+    lvl5_check2=true;
+    check();
+  }
+  else {
+    $("#s_2").attr("src", "images/sublime_2_1.png");
+    lvl5_check2=false;
+  }
+  return lvl5_check2;
+  });
+
+      $("#s_3").click(function(){
+        sound_up();
+    if (lvl5_check3==false){
+    $("#s_3").attr("src", "images/sublime_3_2.png");
+    lvl5_check3=true;
+    check();
+  }
+  else {
+    $("#s_3").attr("src", "images/sublime_3_1.png");
+    lvl5_check3=false;
+  }
+  return lvl5_check3;
+  });
+function check() {
+ setTimeout(function () {
+if (lvl5_check1==true && lvl5_check2==true && lvl5_check3==true){
+    $("#lvl_5").css("display","none");
+    game();
+    sound_bg();
+    game_over= false;
+    $("#info").css("display","none");
+     $(".timer").css("display","none");
+  } 
+  }, 1000);   
+}
+  
+}
+
+function lvl_6(){
+   info();
+  $("#game_container").css("display","none");
+  $(".finish").css("display","block");
+  $("#lvl_6").css("display","block");
+ 
+  $(".top_line").css("display","none");
+  $(".hline-2").css("display","none");
+  
+  $(".bottom_line").css("display","none");
+
+        for (var i=0; i<100; i++){
+    $('#lvl_6').append('<img src="images/eye.png"  class="eye">');
+    $('.eye').each(function(){
+        $(this).css({"left": Math.random() * 0.9*parseInt($('#lvl_6').css("width")) - 0.05*parseInt($('#lvl_6').css("width")) , 
+          "top": Math.random() * parseInt($('#lvl_6').css("height"))-0.1*parseInt($('#lvl_6').css("height"))});      
+      });
+  }
+  var check=0;
+  $(".eye").click(function(){
+    $(this).css("display", "none");
+    sound_up();
+    check++;
+    if(check==100){
+      $("#info").css("display","none");
+      $("#lvl_6").css("display","none");
+      $("#lvl_2").css("display","none");
+    }
+  });
+
+}
+    
+function info(){
+  $("#info").css("display","block");
+  $("#what").click(function(){
+    $("#text").css("top","240px");
+
+    $("#close").click(function(){
+    $("#text").css("top","1000px");  
+  });
+  
+  });
+}
+
+});
+
+
+
+</script>
+</html>

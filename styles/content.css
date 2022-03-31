@@ -1,0 +1,648 @@
+:root {
+  --red: #FF0000;
+  --blue: #0500FF;
+}
+html {
+  cursor: url('../images/face-1.png');
+}
+body {
+  font-family: "Soyuz Grotesk";
+  color: white;
+ } 
+
+.hello {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/sky.png');
+  display: flex; 
+  overflow: hidden;
+}
+.hello .putin_vor{
+  position: absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  top:40%;
+  padding:40px;
+  width: 400px;
+  height: auto;
+  background-color: var(--red);
+  display: none;
+  border: 4px solid white;
+
+}
+
+.hello .container {
+  width: 42%; 
+  height: 100vh;
+  background-color: var(--blue);
+  z-index: 2;
+  display: flex;
+}
+.hello .content {
+  width: 100%; 
+}
+.hello h1 {
+  font-size: 96px; 
+  margin: 40px;
+}
+
+.hello .hline-1 {
+  position: relative;
+  width: 100%; 
+  height: 4px;
+  background-color: white; 
+}
+
+.hello p {
+  font-family: "HelveticaNeueCyr";
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 40px;
+}
+
+.hello #prev-btn-1:hover, #next-btn-1:hover, #prev-btn-2:hover, #next-btn-2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(0.98,0.98);
+  transition: .5s;
+}
+
+.hello .choose  {
+  margin: 40px;
+}
+
+.hello .choose .c-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.hello .choose .c-1 h1 {
+ margin-top: -10px;
+} 
+.hello .choose div h1, .hello .choose p {
+  margin: 0 0 16px 0;
+}
+
+
+#char {
+  background-image: url('../images/face-1.png');
+  background-size: 100%;
+  width: 100px;
+  display: flex;
+  height: 100px;
+}
+
+.hello .vline-1{
+  width: 8px; 
+  height: 100vh;
+  background-color: white;
+  z-index: 3;
+}
+.hello .hands  {
+  margin-left: -100px;
+  margin-top: -150px;
+  z-index: 1;
+}
+.hello .hands img {
+  margin: 40px;
+}
+.hello .hands > img:nth-child(odd) {
+  animation: hand-move-1 8s infinite alternate;
+}
+.hello .hands > img:nth-child(even) {
+  animation: hand-move-2 8s infinite alternate;
+}
+@keyframes hand-move-1 {
+  0% {
+    transform: scale(1, -1) rotate(-45deg) translate(0px, 800px);
+  }
+  100% {
+    transform: scale(1, -1) rotate(-45deg) translate(0px, 200px);
+  }
+}
+@keyframes hand-move-2 {
+  0% {
+    transform: rotate(45deg) translate(0px, 800px);
+  }
+  100% {
+    transform: rotate(45deg) translate(0px, 200px);
+  }
+}
+
+ .button {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  width: 400px; 
+  height: 400px;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 2;
+}
+ .button:hover {
+  transition: 1s;
+  transform: scale(0.9,0.9);
+ }
+
+ .button:hover {
+  cursor: url('../images/cursor_pointer.png'), pointer;
+ }
+
+.hello .button p {
+ font-family: "Soyuz Grotesk";
+ font-size: 48px;
+ margin-top: 45%;
+}
+.hello a {color: white; text-decoration: none;}
+
+
+.main_game {
+  display: none; 
+  overflow: hidden;
+  height: 100vh;
+  
+}
+.main_game .top_line {
+  height: 64px;
+  border-color: white;
+  padding: 0px 40px 0px 40px;
+}
+.main_game .bottom_line {
+  height: 64px;
+  border-color: white;
+  padding: 0px 40px 0px 40px;
+}
+
+.main_game .content{
+  display: flex;
+  justify-content: space-between;
+  color: var(--red);
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.main_game .b {
+  padding-top: 4px;
+}
+.main_game .hline-2{
+  width: 100%; 
+  height: 4px;
+  background-color: var(--red); 
+}
+
+.main_game .score{
+  display: flex;
+}
+
+.main_game #game_container
+{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 128px);
+  width: 100vw;
+  background-image: url('../images/sky.png');
+  
+}
+
+.main_game .wrapper {
+    width: 100vw;
+    height: calc(100vh - 128px);
+  }
+.main_game .bg {
+  position: absolute;
+  bottom: 0;
+  margin-left: -40px;
+  z-index: 1;
+  display: flex;
+}
+.main_game .bg img:nth-child(2){
+  margin-left:-120px;
+}
+.main_game .level {
+  background-color: var(--red);
+  height: 48px;
+  width: 48px;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.main_game #bird {
+    background-image: url('../images/face-1.png');
+    background-size: 100%;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 2;
+}
+
+.main_game .pole {
+    position: absolute;
+    height: 240px;
+    width: 10%;
+    background-color: red;
+    right: 0px;
+    font-size: 40px;
+    text-align: center;
+    z-index: 2;
+  }
+.main_game .pole2 {
+    position: absolute;
+    height: 280px;
+    width: 10%;
+    background-color: red;
+    right: -100vw;
+    font-size: 40px;
+    text-align: center;
+    z-index: 2; 
+}
+
+.main_game #pole-1, #pole-3 {
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 16px; 
+}
+
+.main_game #pole-2, #pole-4 {
+    bottom: 0px;
+}
+ 
+ .main_game .back:hover { cursor: pointer; }
+
+
+.level_end {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/sky.png'); 
+  overflow: hidden;
+  display: none;
+}
+
+ .level_end .content {
+  width: 100vw;
+  height: 35%;
+  background-color: var(--blue);
+  display: flex;
+ }
+
+ .level_end .result {
+  font-size: 80px; 
+  margin: 40px;
+
+  display: flex;
+ }
+
+ .level_end .vline-2{
+  width: 4px; 
+  height: 100%;
+  background-color: white;
+  z-index: 3;
+}
+ .level_end .text {
+  font-size: 40px; 
+  margin: 40px;
+  width: 40%;
+ }
+
+ .level_end .text p {
+  margin-bottom: 40px;
+ }
+
+ .level_end .hline-3{
+  height: 4px; 
+  width: 100%;
+  background-color: white;
+  z-index: 3;
+}
+
+ .level_end .hands{
+  display: flex; 
+  margin-left: -100px;
+  align-items: flex-end;
+}
+@keyframes hands-1 {
+  0% {
+    transform: translateY(160px) rotate(15deg);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(160px) rotate(15deg);
+  }
+}
+@keyframes hands-2 {
+  0% {
+    transform: scale(-1, 1) translateY(0px);
+  }
+  50% {
+    transform: scale(-1, 1) translateY(160px) rotate(15deg);
+  }
+  100% {
+    transform: scale(-1, 1) translateY(0px);
+  }
+}
+
+ .level_end .hands img:nth-child(1){
+  animation: hands-1 2s infinite;
+ }
+  .level_end .hands img:nth-child(2){
+  animation: hands-2 2s infinite;
+ }
+ .level_end .button p {
+ font-family: "Soyuz Grotesk";
+ font-size: 48px;
+ margin-top: 37%;
+}
+
+#info {
+  display: none;
+  position: absolute;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#info #what {
+  height: 64px;
+  width: fit-content;
+  padding: 0px 40px 0px 40px;
+  background-color: var(--blue);
+  border: 4px solid white;
+  font-size: 40px;
+  color: white;
+  position: relative;
+  top:-4px;
+  left:-4px;
+  z-index: 10;
+}
+#info #what p {padding-top: 8px;}
+#info #what:hover {cursor: pointer;}
+#info #text {
+  position: relative;
+  margin: auto;
+  top: 1000px;
+  transition: 0.5s ease-in-out;
+
+  height: auto;
+  width: 1000px;
+  padding: 16px 40px 24px 40px;
+  background-color: var(--blue);
+  border: 4px solid white;
+  z-index: 10;
+}
+#info #text h2 {
+  font-size: 96px;
+  margin-bottom: 40px;
+}
+#info #text p {
+  font-family: "HelveticaNeueCyr";
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
+#info #text img {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+#info #text img:hover {
+  cursor: pointer;
+}
+
+
+#lvl_2{
+  display:none;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 3;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+#lvl_2 img:nth-child(1){
+    transform: rotate(-60deg) scale(1,-1);
+    height: 240%;
+    position: relative;
+    margin-top: -48%;
+    margin-left: 24%;
+}
+#lvl_2 img:nth-child(2){
+    transform: rotate(60deg) scale(-1,-1);
+    height: 240%;
+    position: relative;
+    margin-top: -48%;
+    margin-left: -24%;
+}
+
+#lvl_3{
+  display:none;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 3;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--blue);
+}
+
+#lvl_3 .pair{
+ margin-left:auto;
+ margin-right:auto;
+ width: 640px;
+ height: 640px;
+
+}
+#lvl_3 .pair:nth-child(1) {
+   margin-top: 3%;
+}
+#lvl_3 .pair{
+  display: flex;
+  justify-content: space-between;
+}
+#lvl_3 .point{
+  position: relative;
+  z-index: 5;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: var(--red);
+}
+#lvl_3 p{
+  width: 48px;
+  font-size: 96px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+#lvl_3 .line {
+  position: absolute;
+  top:20px;
+  left: 20px;
+}
+#lvl_3 .hline {
+  background-color: white;
+  width: 0px;
+  height: 4px;
+}
+#lvl_3 .vline {
+  background-color: white;
+  width: 4px;
+  height: 0px;
+}
+#lvl_3 #point_1:hover, #point_2:hover, #point_3:hover, #point_4:hover {
+  cursor: pointer;  
+}
+
+#lvl_4 {
+  display: none;
+  position: absolute;
+  width:100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  z-index: 5;
+  overflow: hidden;
+}
+#lvl_4 #lvl4-h {
+  top: 15%;
+left: -50%;
+position: relative;
+max-height: 600px
+}
+
+#lvl_4 #circle {
+  min-width: 2000px;
+  height: 2000px;
+  background-color: var(--red);
+  border-radius: 50%;
+  position: relative;
+  top: -50%;
+  left: -50%
+}
+
+#lvl_5 {
+  display:none;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 3;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--blue);
+}
+#lvl_5 .objects{
+  position: relative;
+  top: 10%;
+  margin: auto;
+  height: auto;
+  flex-wrap: wrap;
+  max-width: 1900px; 
+  width: 1400px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#lvl_5 .objects img {
+  max-width: 600px;
+}
+#lvl_6 {
+  display:none;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+#lvl_6 .eye {
+  position: absolute;
+}
+ #lvl_6 .eye:nth-child(7n){
+    transform: rotate(30deg);
+  }
+  #lvl_6 .eye:nth-child(7n+1){
+    transform: rotate(45deg);
+  }
+   #lvl_6 .eye:nth-child(7n+2){
+    transform: rotate(60deg);
+  }
+   #lvl_6 .eye:nth-child(7n+3){
+    transform: rotate(90deg);
+  }
+   #lvl_6 .eye:nth-child(7n+4){
+    transform: rotate(135deg);
+  }
+   #lvl_6 .eye:nth-child(7n+5){
+    transform: rotate(150deg);
+  } 
+   #lvl_6 .eye:nth-child(7n+6){
+    transform: rotate(180deg);
+  }
+.finish {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/sky.png');
+  display: none; 
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.finish .container {
+  width: 70%; 
+  height: 100vh;
+  background-color: var(--blue);
+  z-index: 3;
+  position: relative;
+}
+.finish p {
+  font-size: 80px; 
+  padding: 40px;
+}
+.finish p:nth-child(1) {
+  margin-bottom: 240px;
+}
+
+.finish .hands  {
+  z-index: 1;
+  position: relative;
+  top: -120%;
+  left: 70%;
+}
+.finish .hands img {
+  margin: 40px;
+}
+.finish .hands > img:nth-child(odd) {
+  animation: hand-move-1 8s infinite alternate;
+}
+.finish .hands > img:nth-child(even) {
+  animation: hand-move-2 8s infinite alternate;
+}
+.finish .button p {
+ font-family: "Soyuz Grotesk";
+ font-size: 48px;
+ margin-top: 28%;
+}
+ .finish .button:hover {
+  transition: 1s;
+  transform: scale(0.9,0.9);
+  cursor: pointer;
+ }
