@@ -7,6 +7,8 @@
 	<title>рука об руку</title>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="draganddrop.js"></script>
+
 	 <link href="styles/reset.css" rel="stylesheet">
    <link href="styles/content.css" rel="stylesheet">
   <link href="styles/font.css" rel="stylesheet">  
@@ -18,16 +20,16 @@
 	 <div class="container">
 	   <div class="content">
 
-      <div class="putin_vor"> putin vor! </div>
+      <div class="putin_vor"> ошибка!<br> Этот персонаж сейчас недоступен. Пожалуйста, выберите другого.</div>
 
       <h1>добро пожаловать в&nbsp;игру!</h1>
       <div class="hline-1"></div>
 
-      <p> Пройди свой путь борьбы, не обманувшись защитными механизмами твоей психики.  </p>
+      <p> Пройди свой путь борьбы, не&nbsp;обманувшись защитными механизмами твоей психики.  </p>
       <div class="hline-1"></div>
 <div class="settings">
       <div class="choose" id="choose_1">
-        <p>Выбери пожалуйста испытание:</p>
+        <p>Выбери, пожалуйста, испытание:</p>
         <div class="c-1">
           <img src="images/prev-btn.svg" id="prev-btn-1">
           <h1 id="blockhello"> паника </h1>
@@ -37,7 +39,7 @@
       <div class="hline-1"></div>
 
        <div class="choose" id="choose_2">
-        <p>Выбери пожалуйста персонажа:</p>
+        <p>Выбери, пожалуйста, персонажа:</p>
         <div class="c-1">
           <img src="images/prev-btn.svg" id="prev-btn-2"></img>
               <div id="char"></div>
@@ -55,6 +57,8 @@
       <img src="images/hand-1.png">
     </div>  
     <div class="button" id="game-btn"><p>играть</p></div>
+    <div class="button" id="mob-next"><p>дальше</p></div>
+    <div id="mob-back"><img src="images/back.png"></div>
   </div>
 
 
@@ -79,8 +83,8 @@
       <div id="pole-3" class="pole2"><p class="blockgame">паника</p></div>
       <div id="pole-4" class="pole2"><p class="blockgame">паника</p></div>
       <div class="bg">
-       <img  src="images/bg-1.png">
-       <img  src="images/bg-1.png">
+       <img class="bg-img" src="images/bg-1.png">
+       <img class="bg-img" src="images/bg-1.png">
       </div> 
     </div>
     </div>
@@ -144,27 +148,30 @@
       </div>
    </div>
 
-   
+   <div id="lvl_6"></div>
 
     <div id="info">
       <div id="what"> <p>что такое <span id="what_word"> отрицание </span> ? </p></div>
       <div id="text">
         <h2 id="what_text"> отрицание</h2>
-        <p id="text_text"> Отрицание — чрезвычайно простая для понимания защита. Её название говорит само за себя — применяющий её человек, собственно, отрицает события или информацию, которую не может принять. Проблема с отрицанием состоит в том, что оно  не может защитить от реальности.</p>
+        <p id="text_text"> Отрицание — чрезвычайно простая для&nbsp;понимания защита. Её&nbsp;название говорит само за&nbsp;себя — применяющий её&nbsp;человек, собственно, отрицает события или&nbsp;информацию, которую не&nbsp;может принять. Проблема с&nbsp;отрицанием состоит 
+        в&nbsp;том, что оно  не&nbsp;может защитить от&nbsp;реальности.</p>
         <img src="images/close.svg" id="close">
       </div>
    </div>
 
+   <div id="help"><p>чтобы начать играть, нажмите пробел</p></div>
+
   </div>
-<div id="lvl_6"></div>
+
 
   <div class="level_end">
     <div class="content">
       <div class="result"><h1>остаток ресурсов:&nbsp;<span id="result">100</span></h1></div>
       <div class="vline-2"></div>
       <div class="text">
-        <p>ты молодец, но твоя психика борется &nbsp;с изменениями </p>
-        <p>чтобы перейти дальше пройди&nbsp;через защитный механизм <span id="level_name">отрицания</span> </p>
+        <p>ты молодец, но твоя психика борется с&nbsp;изменениями </p>
+        <p>чтобы перейти дальше пройди через&nbsp;защитный механизм <span id="level_name">отрицания</span> </p>
        </div>
 
     </div>
@@ -176,12 +183,14 @@
     <div class="button" id="lvl-btn"><p>давай <br>дальше</p></div>
 
   </div>  
-
+<div class="resourse_end">
+  <p>ваши ресурсы закончились. вы начнете игру заново</p>
+</div> 
 <div class="finish"> 
    <div class="container">
 
       <p>поздравляю! <br> ты прошел игру!</p>
-      <p> <span class="blockgame">паника</span> проработана. твой результат не важен. важно то, что твоя психика не обманулась <br> ни одним защитным механизмом  в твоей личной борьбе. </p>
+      <p> <span class="blockgame">паника</span> проработана. твой результат не&nbsp;важен. важно то, что твоя психика не&nbsp;обманулась <br> ни&nbsp;одним защитным механизмом  в&nbsp;твоей личной борьбе. </p>
   </div>
 
     <div class="hands">
@@ -197,6 +206,25 @@
 
  </body>
  <script type="text/javascript">
+
+ $(document).ready(function(){
+  $("#mob-next").click(function(){
+    $('#choose_2').css('display','block');
+    $('#choose_1').css('display','none');
+    $('#mob-back').css('display','block');
+    $('#mob-next').css('display','none');
+    $('#game-btn').css('display','block');
+   });
+  });
+ $(document).ready(function(){
+  $("#mob-back").click(function(){
+    $('#choose_2').css('display','none');
+    $('#choose_1').css('display','block');
+    $('#mob-back').css('display','none');
+    $('#mob-next').css('display','block');
+    $('#game-btn').css('display','none');
+   });
+  });
 var blocks = ["паника","тревога","грусть","злость","вина","обида","агрессия"];
 var i=0;
 var blockhello = $('#blockhello');
@@ -341,13 +369,17 @@ $("#game-btn").click(function() {
     var go_up = false;
     var game_over = false;
     var score_updated = false;
-    var speed = 20;
+    var speed = 0.01*container_width;
    
    $(document).ready(function(){
+    $('#help').fadeIn(1000);
+    $('#help').delay(600).fadeOut(1000);
     if(putin_vor==false){
+     
     game();
     sound_bg();
-}
+  }
+
   });
 
     function game(){
@@ -385,6 +417,18 @@ console.log(container_width);
               result= result-1;
               score.text(result);
               $("#result").text(result);
+
+              if (result==0){
+                clearInterval(the_game);
+            game_over = true;
+            sound_bg_stop();
+            sound_error();
+
+            $('.resourse_end').fadeIn(2000);
+            setTimeout(function(){
+           location.reload();
+              }, 4000);
+              }
 
             
             }
@@ -527,6 +571,9 @@ $(document).ready(function(){
   if (parseInt(level.text()) == 2){
     level_name.text("рационализации");
     lvl_2();
+     $( '.bg-img' ).each(function() {
+    $( this ).attr("src", "images/bg-2.png");
+    });
   }
   if (parseInt(level.text()) == 3){
     level_name.text("вытесенения");
@@ -534,27 +581,39 @@ $(document).ready(function(){
     $( "#what_word" ).text("рационализация"); 
     $( "#what_text" ).text("рационализация");    
     $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+    $( '.bg-img' ).each(function() {
+    $( this ).attr("src", "images/bg-3.png");
+    });
   }
   if (parseInt(level.text()) == 4){
     level_name.text("сублимации");
     lvl_4();
     $( "#what_word" ).text("вытеснение"); 
     $( "#what_text" ).text("вытеснение");    
-    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+    $( "#text_text" ).text("Как защитный механизм, вытеснение направлено на минимизацию отрицательных переживаний за счёт удаления из сознания того, что эти переживания вызывает. Удалённые из сознания, эти элементы, однако, не пропадают из памяти. ");
+    $( '.bg-img' ).each(function() {
+    $( this ).attr("src", "images/bg-4.png");
+    });
   }
   if (parseInt(level.text()) == 5){
     level_name.text("проекции");
     lvl_5();
     $( "#what_word" ).text("сублимация"); 
     $( "#what_text" ).text("сублимация");    
-    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+    $( "#text_text" ).text(" Сублимация – это тип защитного механизма психики, бессознательная психологическая защита, уменьшающая беспокойство, вызванное неприемлемыми побуждениями или нежелательными стимулами, перевод негативных и неодобряемых обществом мыслей и чувств в полезные дела.  ");
+    $( '.bg-img' ).each(function() {
+    $( this ).attr("src", "images/bg-5.png");
+    });
   }
   if (parseInt(level.text()) == 6){
     lvl_6();
     $(".game_container").css("display","none");
     $( "#what_word" ).text("проекция"); 
     $( "#what_text" ).text("проекция");    
-    $( "#text_text" ).text("Рационализа́ция — механизм психологической защиты, при котором в мышлении используется только та часть воспринимаемой информации, и делаются только те выводы, благодаря которым собственное поведение предстаёт как хорошо контролируемое и не противоречащее объективным обстоятельствам. ");
+    $( "#text_text" ).text("Проекция — это общий психологический механизм, с помощью которого субъективные содержания переносятся на объект. Человек приписывает кому-то или чему-то собственные мысли, чувства, мотивы, черты характера и пр., полагая, что он воспринял что-то приходящее извне, а не изнутри самого себя. ");
+    $( '.bg-img' ).each(function() {
+    $( this ).attr("src", "images/bg-6.png");
+    });
   }
 
   });
@@ -858,7 +917,7 @@ function lvl_6(){
 function info(){
   $("#info").css("display","block");
   $("#what").click(function(){
-    $("#text").css("top","240px");
+    $("#text").css("top","20%");
 
     $("#close").click(function(){
     $("#text").css("top","1000px");  

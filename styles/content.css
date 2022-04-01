@@ -3,7 +3,7 @@
   --blue: #0500FF;
 }
 html {
-  cursor: url('../images/face-1.png');
+  cursor: url('../images/cursor_default.png'),default;
 }
 body {
   font-family: "Soyuz Grotesk";
@@ -24,12 +24,13 @@ body {
   margin:auto;
   top:40%;
   padding:40px;
-  width: 400px;
+  width: 640px;
   height: auto;
+  font-size: 40px;
+  z-index: 10;
   background-color: var(--red);
   display: none;
   border: 4px solid white;
-
 }
 
 .hello .container {
@@ -63,7 +64,7 @@ body {
 }
 
 .hello #prev-btn-1:hover, #next-btn-1:hover, #prev-btn-2:hover, #next-btn-2:hover {
-  cursor: pointer;
+  cursor: url('../images/cursor_pointer.png'),pointer;
   opacity: 0.8;
   transform: scale(0.98,0.98);
   transition: .5s;
@@ -108,7 +109,7 @@ body {
   z-index: 1;
 }
 .hello .hands img {
-  margin: 40px;
+  margin: 28px;
 }
 .hello .hands > img:nth-child(odd) {
   animation: hand-move-1 8s infinite alternate;
@@ -132,7 +133,20 @@ body {
     transform: rotate(45deg) translate(0px, 200px);
   }
 }
-
+#mob-next{
+  display: none;
+}
+#mob-back{
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background-color: var(--blue);
+  width: 80px; 
+  height: 80px;
+  z-index: 6;
+}
  .button {
   position: absolute;
   bottom: 0px;
@@ -278,7 +292,7 @@ body {
     bottom: 0px;
 }
  
- .main_game .back:hover { cursor: pointer; }
+ .main_game .back:hover { cursor: url('../images/cursor_pointer.png'),pointer; }
 
 
 .level_end {
@@ -388,7 +402,7 @@ body {
   z-index: 10;
 }
 #info #what p {padding-top: 8px;}
-#info #what:hover {cursor: pointer;}
+#info #what:hover {cursor: url('../images/cursor_pointer.png'),pointer;}
 #info #text {
   position: relative;
   margin: auto;
@@ -419,7 +433,7 @@ body {
   top: 40px;
 }
 #info #text img:hover {
-  cursor: pointer;
+  cursor: url('../images/cursor_pointer.png'),pointer;
 }
 
 
@@ -447,6 +461,7 @@ body {
     margin-top: -48%;
     margin-left: -24%;
 }
+#lvl_2 img:hover {cursor: url('../images/cursor_move.png'),pointer;}
 
 #lvl_3{
   display:none;
@@ -505,7 +520,7 @@ body {
   height: 0px;
 }
 #lvl_3 #point_1:hover, #point_2:hover, #point_3:hover, #point_4:hover {
-  cursor: pointer;  
+  cursor: url('../images/cursor_pen.png'),pointer; 
 }
 
 #lvl_4 {
@@ -524,7 +539,9 @@ left: -50%;
 position: relative;
 max-height: 600px
 }
-
+#lvl_4 #lvl4-h:hover{
+  cursor: url('../images/cursor_move.png'),pointer;
+}
 #lvl_4 #circle {
   min-width: 2000px;
   height: 2000px;
@@ -561,6 +578,7 @@ max-height: 600px
 #lvl_5 .objects img {
   max-width: 600px;
 }
+#lvl_5 img:hover {cursor: url('../images/cursor_reload.png'),pointer;}
 #lvl_6 {
   display:none;
   position: absolute;
@@ -573,6 +591,9 @@ max-height: 600px
 }
 #lvl_6 .eye {
   position: absolute;
+}
+#lvl_6 .eye:hover {
+  cursor: url('../images/cursor_delete.png'),pointer;
 }
  #lvl_6 .eye:nth-child(7n){
     transform: rotate(30deg);
@@ -646,3 +667,47 @@ max-height: 600px
   transform: scale(0.9,0.9);
   cursor: pointer;
  }
+
+#help
+{
+  display:none;
+  position: absolute;
+  top: 40%;
+  left:0;
+  right: 0;
+  margin: auto;
+  width: 720px;
+  height:auto;
+  background-color: var(--red);
+  border: 4px solid white;
+  z-index: 10;
+}
+
+#help p{
+  font-family: "Soyuz Grotesk";
+ font-size: 32px;
+ width: 90%;
+ margin: 40px auto 40px auto;
+}
+
+.resourse_end
+{
+  display:none;
+  position: absolute;
+  top: 40%;
+  left:0;
+  right: 0;
+  margin: auto;
+  width: 720px;
+  height:auto;
+  background-color: var(--red);
+  border: 4px solid white;
+  z-index: 10;
+}
+
+.resourse_end p{
+  font-family: "Soyuz Grotesk";
+ font-size: 32px;
+ width: 90%;
+ margin: 40px auto 40px auto;
+}
