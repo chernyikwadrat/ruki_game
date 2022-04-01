@@ -503,7 +503,12 @@ var audio = new Audio();
             go_up = setInterval(up, 50);
         }
     });
-
+      $(document).on( "tap", function (e) {
+        var key = e.keyCode;
+        if (go_up === false && game_over === false) {
+            go_up = setInterval(up, 50);
+        }
+    });
     $(document).on('keyup', function (e) {
         var key = e.keyCode;
         if (key === 32) {
