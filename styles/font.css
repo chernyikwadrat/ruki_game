@@ -4,3 +4,9 @@ src: url("../fonts/Soyuz Grotesk Bold.woff") format("woff");
 font-style: normal;
 font-weight: bold;
 }
+@font-face {
+font-family: "HelveticaNeueCyr";
+src: url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
+font-style: normal;
+font-weight: 500;
+}
